@@ -1,14 +1,11 @@
 package views;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import controllers.EventListController;
 import core.Model;
 import core.View;
+
+import javax.swing.*;
+import java.awt.*;
 
 
 /**
@@ -62,5 +59,8 @@ public class EventListView extends JPanel implements View
 	{
 		JScrollPane scrollPane = new JScrollPane(table);
 		add(scrollPane, BorderLayout.CENTER);
+	}
+	public JTable getTable() {
+		return table;
 	}
 }

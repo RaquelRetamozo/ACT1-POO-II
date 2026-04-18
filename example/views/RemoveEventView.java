@@ -87,7 +87,7 @@ public class RemoveEventView extends JPanel implements View {
 
     private void make_btn_selectAll() {
         JButton btn_selectAll = new JButton("Seleccionar Todos");
-        btn_selectAll.setBounds(320, 235, 150, 25);
+        btn_selectAll.setBounds(320, 235, 140, 25);
         add(btn_selectAll);
 
         btn_selectAll.addActionListener(new ActionListener() {
@@ -101,8 +101,8 @@ public class RemoveEventView extends JPanel implements View {
     }
 
     private void make_btn_remove() {
-        JButton btn_remove = new JButton("Remover");
-        btn_remove.setBounds(270, 270, 100, 25);
+        JButton btn_remove = new JButton("Eliminar Evento");
+        btn_remove.setBounds(240, 270, 140, 25);
         add(btn_remove);
 
         btn_remove.addActionListener(new ActionListener() {
@@ -127,7 +127,7 @@ public class RemoveEventView extends JPanel implements View {
 
     private void make_btn_cancel() {
         JButton btn_cancel = new JButton("Cancel");
-        btn_cancel.setBounds(160, 270, 100, 25);
+        btn_cancel.setBounds(70, 270, 140, 25);
         add(btn_cancel);
 
         btn_cancel.addActionListener(new ActionListener() {

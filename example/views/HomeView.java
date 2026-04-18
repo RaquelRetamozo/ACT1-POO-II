@@ -1,22 +1,19 @@
 package views;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.border.EmptyBorder;
-
 import controllers.HomeController;
 import core.Model;
 import core.View;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 
 
 /**
  * View associated with {@link HomeController}. It will be responsible for program's 
  * main screen view.
  */
-@SuppressWarnings("serial")
+
 public class HomeView extends JPanel implements View
 {
 	//-----------------------------------------------------------------------
@@ -26,7 +23,7 @@ public class HomeView extends JPanel implements View
 	private HomeController homeController;
 	private JFrame mainFrame;
 	private final static int MAIN_FRAME_WIDTH = 500;
-	private final static int MAIN_FRAME_HEIGHT = 350;
+	private final static int MAIN_FRAME_HEIGHT = 400;
 	private final static int MAIN_FRAME_X = 100;
 	private final static int MAIN_FRAME_Y = 100;
 	
@@ -54,8 +51,7 @@ public class HomeView extends JPanel implements View
 	//		Methods
 	//-----------------------------------------------------------------------
 	@Override
-	public void update(Model model, Object data) 
-	{}
+	public void update(Model model, Object data) {}
 	
 	/**
 	 * Configures the main frame of the application.
@@ -80,6 +76,16 @@ public class HomeView extends JPanel implements View
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.addTab("New event", homeController.getNewEventView());
 		tabbedPane.addTab("Events", homeController.getEventListView());
+		tabbedPane.addTab("Remove Event", homeController.getRemoveEventView());
+
+		tabbedPane.addChangeListener(e -> {
+			if (tabbedPane.getSelectedIndex() == 2) {
+				DefaultTableModel model = (DefaultTableModel) homeController
+						.getEventListView().getTable().getModel();
+				homeController.getRemoveEventView().refreshTable(model);
+			}
+		});
+
 		add(tabbedPane, BorderLayout.CENTER);
 	}
 }
