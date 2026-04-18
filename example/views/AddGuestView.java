@@ -50,7 +50,7 @@ public class AddGuestView extends JPanel implements View {
         }
     }
 
-    private void cleanFields() {
+    public void cleanFields() {
         tf_name.setText("");
         tf_phone.setText("");
         tf_address.setText("");
@@ -163,28 +163,19 @@ public class AddGuestView extends JPanel implements View {
         btn_save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!cbx_terms.isSelected()) {
-                    JOptionPane.showMessageDialog(null,
-                            "Debe aceptar los Términos y Condiciones.",
-                            "Advertencia", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
+                String name = tf_name.getText().trim();
+                String phone = tf_phone.getText().trim();
+                String address = tf_address.getText().trim();
+                String gender = rbtn_male.isSelected() ? "Masculino" : "Femenino";
+                String birthdate = cmb_day.getSelectedItem() + "/"
+                        + cmb_month.getSelectedItem() + "/"
+                        + cmb_year.getSelectedItem();
+                boolean terms = cbx_terms.isSelected();
 
-                if (tf_name.getText().trim().isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "El nombre no puede estar vacío.",
-                            "Advertencia", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-
-                JOptionPane.showMessageDialog(null,
-                        "Invitado registrado exitosamente.",
-                        "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                cleanFields();
+                addGuestController.addGuest(name, phone, address, gender, birthdate, terms);
             }
         });
     }
-
     private void make_btn_clean() {
         JButton btn_clean = new JButton("Limpiar");
         btn_clean.setBounds(253, 240, 89, 23);
