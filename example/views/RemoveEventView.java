@@ -64,7 +64,7 @@ public class RemoveEventView extends JPanel implements View {
 
     private void make_table() {
         tableModel = new DefaultTableModel(
-                new Object[]{"Date", "Description", "Frequency", "E-mail", "Alarm", "Boolean"}, 0) {
+                new Object[]{"Fecha", "Descripción", "Frecuencia", "E-mail", "Alarma", "Seleccionar"}, 0) {
             @Override
             public Class<?> getColumnClass(int columnIndex) {
                 if (columnIndex == 5) return Boolean.class; // checkbox

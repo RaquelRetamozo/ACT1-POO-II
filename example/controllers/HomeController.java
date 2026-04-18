@@ -1,11 +1,7 @@
 package controllers;
 
 import core.Controller;
-import views.EventListView;
-import views.HomeView;
-import views.NewEventView;
-import views.RemoveEventView;
-
+import views.*;
 
 /**
  * Main controller. It will be responsible for program's main screen behavior.
@@ -31,10 +27,12 @@ public class HomeController extends Controller
 		eventListController.run();
 		newEventController.run();
 		removeEventController.run();
+		addGuestController.run();
 		
 		// Initializes HomeView
 		homeView = new HomeView(this, mainFrame);
 		addView("HomeView", homeView);
+		loadView("HomeView");
 		
 		// Displays the program window
 		mainFrame.setVisible(true);
@@ -54,6 +52,11 @@ public class HomeController extends Controller
 		return newEventController.getView();
 	}
 
-	public RemoveEventView getRemoveEventView() { return removeEventController.getView();}
+	public RemoveEventView getRemoveEventView() {
+		return removeEventController.getView();
+	}
 
+	public AddGuestView getAddGuestView() {
+		return addGuestController.getView();
+	}
 }

@@ -64,11 +64,11 @@ public class EventListController extends Controller
 	{
 		Vector<String> nameColumns = new Vector<String>();
 		
-		nameColumns.add("Date");
-		nameColumns.add("Description");
-		nameColumns.add("Frequency");
+		nameColumns.add("Fecha");
+		nameColumns.add("Descripción");
+		nameColumns.add("Frecuencia");
 		nameColumns.add("E-mail");
-		nameColumns.add("Alarm");
+		nameColumns.add("Alarma");
 		
 		return nameColumns;
 	}

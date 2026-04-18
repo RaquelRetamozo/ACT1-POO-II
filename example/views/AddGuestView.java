@@ -68,23 +68,23 @@ public class AddGuestView extends JPanel implements View {
     private void make_field_name() {
         JLabel lbl_name = new JLabel("Ingrese Nombre:");
         lbl_name.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lbl_name.setBounds(29, 30, 130, 14);
+        lbl_name.setBounds(29, 30, 200, 14);
         add(lbl_name);
 
         tf_name = new JTextField();
-        tf_name.setBounds(169, 27, 196, 20);
+        tf_name.setBounds(170, 27, 200, 20);
         tf_name.setColumns(10);
         add(tf_name);
     }
 
     private void make_field_phone() {
-        JLabel lbl_phone = new JLabel("Ingrese número celular:");
+        JLabel lbl_phone = new JLabel("Ingrese Telefono:");
         lbl_phone.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lbl_phone.setBounds(29, 65, 150, 14);
+        lbl_phone.setBounds(29, 65, 200, 14);
         add(lbl_phone);
 
         tf_phone = new JTextField();
-        tf_phone.setBounds(190, 62, 175, 20);
+        tf_phone.setBounds(170, 62, 200, 20);
         tf_phone.setColumns(10);
         add(tf_phone);
     }
@@ -144,7 +144,7 @@ public class AddGuestView extends JPanel implements View {
         add(lbl_address);
 
         tf_address = new JTextField();
-        tf_address.setBounds(169, 167, 196, 20);
+        tf_address.setBounds(169, 167, 200, 20);
         tf_address.setColumns(10);
         add(tf_address);
     }

@@ -1,27 +1,18 @@
 package views;
 
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.text.MaskFormatter;
-
 import controllers.NewEventController;
 import core.Model;
 import core.View;
 import models.Frequency;
 import models.SchedulerEvent;
 import models.SchedulerUtil;
+
+import javax.swing.*;
+import javax.swing.text.MaskFormatter;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 
 /**
@@ -99,14 +90,14 @@ public class NewEventView extends JPanel implements View
 	private void make_field_eventDesc()
 	{
 		// Makes label
-		JLabel lbl_eventDesc = new JLabel("Event description");
+		JLabel lbl_eventDesc = new JLabel("Descripción del evento");
 		lbl_eventDesc.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_eventDesc.setBounds(29, 29, 134, 14);
 		add(lbl_eventDesc);
 		
 		// Makes text field
 		tf_eventDesc = new JTextField();
-		tf_eventDesc.setBounds(169, 26, 196, 20);
+		tf_eventDesc.setBounds(169, 26, 200, 20);
 		add(tf_eventDesc);
 		tf_eventDesc.setColumns(10);
 	}
@@ -117,14 +108,14 @@ public class NewEventView extends JPanel implements View
 	private void make_field_fwdEmail()
 	{
 		// Makes label
-		JLabel lbl_forwardEmail = new JLabel("Forward e-mail");
+		JLabel lbl_forwardEmail = new JLabel("Ingrese e-mail");
 		lbl_forwardEmail.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_forwardEmail.setBounds(29, 71, 104, 14);
 		add(lbl_forwardEmail);
 
 		// Makes text field
 		tf_forwardEmail = new JTextField();
-		tf_forwardEmail.setBounds(169, 68, 196, 20);
+		tf_forwardEmail.setBounds(169, 68, 200, 20);
 		add(tf_forwardEmail);
 		tf_forwardEmail.setColumns(10);
 	}
@@ -135,7 +126,7 @@ public class NewEventView extends JPanel implements View
 	private void make_field_date()
 	{
 		// Makes label
-		JLabel lbl_date = new JLabel("Date");
+		JLabel lbl_date = new JLabel("Fecha");
 		lbl_date.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_date.setBounds(29, 119, 78, 14);
 		add(lbl_date);
@@ -159,26 +150,26 @@ public class NewEventView extends JPanel implements View
 		final ButtonGroup btng_periodicity = new ButtonGroup();
 		
 		// Frequency label
-		JLabel lbl_frequency = new JLabel("Frequency");
+		JLabel lbl_frequency = new JLabel("Frecuencia");
 		lbl_frequency.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_frequency.setBounds(29, 164, 78, 14);
 		add(lbl_frequency);
 		
 		// Daily option
-		rbtn_daily = new JRadioButton("Daily");
+		rbtn_daily = new JRadioButton("Diaria");
 		btng_periodicity.add(rbtn_daily);
 		rbtn_daily.setSelected(true);
 		rbtn_daily.setBounds(169, 160, 60, 23);
 		add(rbtn_daily);
 
 		// Weekly option
-		rbtn_weekly = new JRadioButton("Weekly");
+		rbtn_weekly = new JRadioButton("Semanal");
 		btng_periodicity.add(rbtn_weekly);
-		rbtn_weekly.setBounds(253, 160, 67, 23);
+		rbtn_weekly.setBounds(253, 160, 90, 23);
 		add(rbtn_weekly);
 
 		// Monthly option
-		rbtn_monthly = new JRadioButton("Monthly");
+		rbtn_monthly = new JRadioButton("Mensual");
 		btng_periodicity.add(rbtn_monthly);
 		rbtn_monthly.setBounds(347, 160, 78, 23);
 		add(rbtn_monthly);
@@ -190,7 +181,7 @@ public class NewEventView extends JPanel implements View
 	private void make_field_alarm()
 	{
 		// Makes check box
-		cbx_alarm = new JCheckBox("Alarm");
+		cbx_alarm = new JCheckBox("Alarma");
 		cbx_alarm.setBounds(29, 220, 97, 23);
 		add(cbx_alarm);
 	}
@@ -201,8 +192,8 @@ public class NewEventView extends JPanel implements View
 	private void make_btn_save()
 	{
 		// Makes button
-		JButton btn_save = new JButton("Save");
-		btn_save.setBounds(127, 220, 89, 23);
+		JButton btn_save = new JButton("Añadir Evento");
+		btn_save.setBounds(70, 270, 140, 25);
 		add(btn_save);
 
 		// Add action listener
@@ -236,8 +227,8 @@ public class NewEventView extends JPanel implements View
 	private void make_btn_clean()
 	{
 		// Makes button
-		JButton btn_clean = new JButton("Clean");
-		btn_clean.setBounds(253, 220, 89, 23);
+		JButton btn_clean = new JButton("Limpiar");
+		btn_clean.setBounds(253, 270, 140, 25);
 		add(btn_clean);
 
 		// Add action listener
