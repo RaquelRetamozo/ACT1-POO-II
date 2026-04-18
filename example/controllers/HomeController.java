@@ -19,7 +19,7 @@ public class HomeController extends Controller
 	private EventListController eventListController = new EventListController();
 	private NewEventController newEventController = new NewEventController(eventListController);
 	private RemoveEventController removeEventController = new RemoveEventController(eventListController);
-	
+	private AddGuestController addGuestController = new AddGuestController();
 	
 	//-----------------------------------------------------------------------
 	//		Methods

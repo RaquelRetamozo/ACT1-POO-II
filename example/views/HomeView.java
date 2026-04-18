@@ -85,7 +85,6 @@ public class HomeView extends JPanel implements View
 				homeController.getRemoveEventView().refreshTable(model);
 			}
 		});
-
 		add(tabbedPane, BorderLayout.CENTER);
 	}
 }
