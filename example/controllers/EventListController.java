@@ -1,12 +1,12 @@
 package controllers;
 
-import java.util.Vector;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 import core.Controller;
 import models.SchedulerIO;
 import views.EventListView;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.util.Vector;
 
 
 /**
@@ -89,5 +89,9 @@ public class EventListController extends Controller
 		} catch (Exception ex) { }
 
 		return dataColumns;
+	}
+
+	public void removeRowFromTable(int rowIndex) {
+		((DefaultTableModel) table.getModel()).removeRow(rowIndex);
 	}
 }

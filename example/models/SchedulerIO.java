@@ -1,17 +1,12 @@
 package models;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import core.Model;
+import core.View;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
-
-import core.Model;
-import core.View;
 
 
 /**
@@ -110,5 +105,8 @@ public class SchedulerIO implements Model
 		}
 		
 		return response;
+	}
+
+	public void deleteEvent(int rowIndex) {
 	}
 }
